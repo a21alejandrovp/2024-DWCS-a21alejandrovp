@@ -40,6 +40,7 @@
 #     print('You are older than 18.')
 
 
+
 # BUCLE FOR
 # ---------
 # for posicion in posiciones:
@@ -64,13 +65,13 @@
 
 # CLASSES
 # -------
-class Jugador:
-    nombre = 'Alejandro'
-    edad = 22
-    equipo = "CV Noia"
-    posicion = 'Central'
-    def presentacion(self):
-        print(f'Hola, mi nombre es {self.nombre}, tengo {self.edad} años y juego de {self.posicion} en el {self.equipo}')
+# class Jugador:
+#     nombre = 'Alejandro'
+#     edad = 22
+#     equipo = "CV Noia"
+#     posicion = 'Central'
+#     def presentacion(self):
+#         print(f'Hola, mi nombre es {self.nombre}, tengo {self.edad} años y juego de {self.posicion} en el {self.equipo}')
 
-yo = Jugador()
-print(yo.presentacion())
+# yo = Jugador()
+# print(yo.presentacion())
