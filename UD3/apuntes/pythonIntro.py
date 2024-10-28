@@ -75,3 +75,26 @@
 
 # yo = Jugador()
 # print(yo.presentacion())
+
+# class Car:
+#     modelo = "Volkswaguen Polo 6N2"
+
+#     def __init__(self, color, power):
+#         self.color = color
+#         self.power = power
+    
+#     def getColor(self):
+#         return self.color
+
+#     def setColor(self, color):
+#         self.color = color
+
+#     def getModelo():
+#         return Car.modelo
+
+#     def __str__(self):
+#         return(f'My car "{self.modelo}" is {self.color} and has {self.power} hp.')
+
+# polo = Car('black', 64)
+# print(polo)
+# print(Car.getModelo())
