@@ -2,7 +2,7 @@
 FROM python:3.11
 
 # Establece el directorio de trabajo dentro del contenedor
-WORKDIR /entregas
+WORKDIR /code
 
 # Copia el archivo de requisitos al contenedor
 COPY requirements.txt .
@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia el código del proyecto al directorio de trabajo en el contenedor
-COPY . /entregas/
+COPY . /code/
 
 # Ejecuta el comando para crear un nuevo proyecto Django
 # RUN django-admin startproject password_generator .
