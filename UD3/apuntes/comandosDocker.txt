@@ -1,0 +1,19 @@
+## CREAR UN PROYECTO
+1. Crear nuevo directorio
+2. Añadir al directorio los archivos requirements.txt, Dockerfile y docker-compose.yml
+3. Abrir una terminal en ese directorio
+4. Introducir el comando "docker compose run web django-admin startproject nombreDelProyecto ."
+5. Introducir el comando "docker compose run web python manage.py migrate"
+6. Introducir el comando "docker compose up -d"
+
+## PASOS PREVIOS A LA CREACIÓN DE UN PROYECTO
+1. Borrar y parar los contenedores existentes con el comando "docker rm idDelContenedor"
+2. Borrar las imágenes existentes con el comando "docker rmi idDeLaImagen"
+
+## CREAR UNA APP
+1. Introducir el comando "docker compose run web python manage.py startapp nombreDeLaApp"
+
+## PASOS ESENCIALES DESPUÉS DE CREAR UNA APP
+1. Añadir el nombre de la app en el fichero settings.py en el apartado de INSTALLED_APPS
+2. Añadir la siguiente librería "from nombreDelProyecto import views" en el fichero urls.py
+3. Añadir la siguiente url "path('', views.home, name='home')," en el fichero urls.py
