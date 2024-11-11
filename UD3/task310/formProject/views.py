@@ -9,12 +9,24 @@ def responsePage(request):
     password = request.GET.get('password')
     city = request.GET.get('city')
 
+    option = request.GET.get('webserver')
+    options = ['Apache', 'Nginx', 'Google GWS']
+    optionSelected = options[int(option)]
+
     admin = request.GET.get('admin')
     engineer = request.GET.get('engineer')
     manager = request.GET.get('manager')
     guest = request.GET.get('guest')
 
-    options = ['Apache', 'Nginx', 'Google GWS']
+    role = ""
+    if admin:
+        role = 'Admin'
+    elif engineer:
+        role = 'Engineer'
+    elif manager:
+        role = 'Manager'
+    elif guest:
+        role = 'Guest'
 
     mail = request.GET.get('mail')
     payroll = request.GET.get('payroll')
@@ -32,12 +44,9 @@ def responsePage(request):
         'username': username,
         'password': password,
         'city': city,
-        'admin': admin,
-        'engineer': engineer,
-        'manager': manager,
-        'guest': guest,
-        'options': options,
+        'role': role,
+        'optionSelected': optionSelected,
         'signon': signon
     }
 
-    return render(request, 'formProject/responseProject.html', datos)
+    return render(request, 'formProject/responsePage.html', datos)
