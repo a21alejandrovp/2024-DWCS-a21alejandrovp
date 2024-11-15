@@ -6,6 +6,14 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>a</h1>
+    {% for article in articles %}
+    <ul class="list-group">
+      <li class="list-group-item"><h1>{{ article.title }}</h1></li>
+      <li class="list-group-item">
+        <p>{{ article.description}}</p>
+        <img src="{{ project.image.url }}" alt="Rayo McQueen" />
+      </li>
+    </ul>
+    {% endfor %}
   </body>
 </html>
