@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from .models import Article
+from django.shortcuts import render, get_object_or_404
+from .models import Blog
 
 def all_blogs(request):
-    articles = Article.objects.order_by('-date')[:3]
-    return render(request, 'blog/all_blogs.html', {'articles':articles})
+    blogs = Blog.objects.order_by('-date')
+    return render(request, 'blog/all_blogs.html', {'blogs':blogs})
 
-def detail(request, article_id):
-    article = get_object_or_404(Article, pk=article_id)
-    return render(request, 'blog/detail.html', {'id': article_id})
+def detail(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    return render(request, 'blog/detail.html',{'blog':blog})
