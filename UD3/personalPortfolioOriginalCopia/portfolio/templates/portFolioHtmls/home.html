@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+        background-color: #f4f4f9;
+        font-family: "Arial", sans-serif;
+        padding-top: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 40px;
+      }
+
+      .header-img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .card {
+        margin: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        flex: 0 0 calc(33.333% - 20px); /* Tres columnas con espacios */
+        max-width: calc(33.333% - 20px);
+        box-sizing: border-box;
+      }
+
+      .card-header {
+        background-color: #007bff;
+        color: white;
+        font-size: 1.5rem;
+        padding: 15px;
+      }
+
+      .card-body {
+        padding: 15px;
+      }
+
+      .card-body img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .date {
+        font-size: 0.9rem;
+        color: #888;
+        margin-top: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  {% extends "portFolioHtmls/base.html" %} {% block content %}
+
+  <body>
+    <h1><b>KARASUNO TEAM</b></h1>
+    {% load static %} {% comment %} en la línea de abajo hay que poner
+    blog:all_blogs porque hay que indicar que va a /blog, que tenemos indicado
+    en view y luego al archivo a all_blogs que tenemos puesto como nombre en
+    urls {% endcomment %}
+    <img
+      src="{% static 'portfolio/banner.jpg' %}"
+      alt="Imagen"
+      class="header-img"
+    />
+
+    <div class="container d-flex flex-wrap justify-content-center">
+      {% for project in projects %}
+      <div class="card">
+        <div class="card-header" style="background-color: black">
+          {{ project.title }}
+        </div>
+        <div class="card-body">
+          <p>{{ project.description }}</p>
+          {% if project.image %}
+          <img src="{{ project.image.url }}" alt="Project Image" />
+          {% endif %} {% if project.url %}
+          <a
+            href="{{ project.url }}"
+            class="btn btn-primary"
+            style="background-color: black"
+            >Visit Project</a
+          >
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %} {% endblock %}
+    </div>
+  </body>
+</html>
