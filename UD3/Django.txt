@@ -1,0 +1,23 @@
+--- PASOS INICIALES ---
+1. Crear el directorio (mkdir PORTFOLIO)
+2. Añadir los ficheros requirements.txt, Dockerfile y docker-compose.yml al directorio
+3. Crear el proyecto dentro del directorio (docker compose run web django-admin startproject nombreDelProyecto)
+4. Hacer las migraciones necesarias (docker compose run web python manage.py migrate)
+5. Iniciar el contenedor (docker compose up -d)
+6. Comprobar que Django está funcionando (localhost:8000)
+
+--- APPS ---
+1. Detener el docker (docker compose down)
+2. Creamos las apps (docker compose run --rm web python manage.py startapp nombreDeLaApp[[[home]]])
+3. Añadir la ap en el fichero settings.py
+
+--- URLs ---
+1. En el fichero urls.py, eliminamos la librería de admin
+2. Importamos el fichero views de la app (from home import views)
+3. Añadimos a las urls el views.home y el views.password (path('', views.home), path('password/', views.password)
+
+--- VIEWS ---
+1. En el fichero views.py (directorio home) añadimos la librería http (from django.http import HttpResponse)
+2. Definimos las vistas (def home: render(request, 'home/home.html', {'password':'abc123.}))
+
+
