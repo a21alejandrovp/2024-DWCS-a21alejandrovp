@@ -5,8 +5,3 @@ class Proyecto(models.Model):
     descripcion = models.TextField()
     imagen = models.ImageField()
     url = models.URLField()
-
-class Reseña(models.Model):
-    autor = models.Charfield(max_length=200)
-    descripcion = models.TextField()
-    rating = models
