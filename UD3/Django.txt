@@ -19,5 +19,8 @@
 --- VIEWS ---
 1. En el fichero views.py (directorio home) añadimos la librería http (from django.http import HttpResponse)
 2. Definimos las vistas (def home: render(request, 'home/home.html', {'password':'abc123.}))
+3. Añadir el directorio templates, con su correspondiente subdirectorio home, donde introduciremos los archivos HTML de la app
 
+--- PASOS POSTERIORES ---
+1. Acceder al fichero settings.py y añadir las rutas del directorio media (MEDIA_URL = '/media' ---MEDIA_ROOT = BASE_DIR / '/media')
 

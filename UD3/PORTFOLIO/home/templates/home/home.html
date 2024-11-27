@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      a,
+      .nav-link {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+
+      #banner {
+        width: 100%;
+        height: auto;
+      }
+
+      .container100 img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    {% load static %}
+    <!-- Navbar -->
+    <div>
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+          <a href="{% url 'home' %}" class="d-flex align-items-center">
+            <img
+              src="{% static 'home/logoDeAlejandro.jpg' %}"
+              alt="Logo de Alejandro"
+              width="30"
+              height="30"
+              class="rounded-pill"
+            />
+            <span class="ms-2">ALEJANDRO VÁZQUEZ</span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">INICIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'proyecto:proyectos' %}"
+                  >PROYECTOS</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% static 'home/curriculum.pdf' %}"
+                  >SOBRE MÍ</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Banner -->
+    <img
+      src="{% static 'home/banner.jpg' %}"
+      alt="Banner de Alejandro"
+      class="img-fluid"
+      id="banner"
+    />
+
+    <!-- About Section -->
+    <div class="container text-center my-5">
+      <h1>ALEJANDRO VÁZQUEZ</h1>
+      <p class="lead">Desarrollador de Aplicaciones Web</p>
+      <hr />
+    </div>
+
+    <!-- Content Section -->
+    <div class="container">
+      <div class="row align-items-center gy-4 pb-5">
+        <!-- Left Section -->
+        <div class="col-lg-6">
+          <div class="mb-4">
+            <h1>DESARROLLADOR DE APLICACIONES WEB</h1>
+            <p>
+              Soy un Desarrollador de Aplicaciones Web apasionado por las nuevas
+              tecnologías.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h1>EXPERIENCIA</h1>
+            <p>
+              Aunque aún no he trabajado en el sector de la informática, cuento
+              con experiencia en gestión de eventos y hostelería, donde he
+              desarrollado habilidades en organización, trabajo en equipo y
+              atención al cliente, aplicables a entornos tecnológicos.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h1>RESULTADOS</h1>
+            <p>
+              Considero que en un proyecto es tan importante el código como un
+              buen diseño y una buena usabilidad. No basta con que un producto
+              funcione, debe de ser fácil de utilizar y atractivo a la vista. Y
+              lo más importante de todo, que cubra las necesidades del cliente.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="col-lg-6 text-center">
+          <img
+            src="{% static 'home/logoDeAlejandro.jpg' %}"
+            alt="Logo de Alejandro"
+            class="rounded-pill img-fluid"
+            style="max-width: 300px"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
