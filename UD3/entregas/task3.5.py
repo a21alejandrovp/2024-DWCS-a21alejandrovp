@@ -1,5 +1,9 @@
 # TASK 3.5 - WORKING WITH LISTS - TRIPLE CHECK FUNCTION
 # -----------------------------------------------------
+# -----------------------------------------------------
+# -----------------------------------------------------
+# -----------------------------------------------------
+
 def tripleCheck(array):
     if type(array) != list:
         raise Exception("Tha parameter must be an array!")

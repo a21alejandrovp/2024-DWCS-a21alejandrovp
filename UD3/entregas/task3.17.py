@@ -1,3 +1,9 @@
+# TASK 3.17 - PYTHON REVIEW - EXCEPTIONS
+# --------------------------------------
+# --------------------------------------
+# --------------------------------------
+# --------------------------------------
+
 class DivisionByZeroError(Exception):
     def __init__(self, message="Cannot divide by zero."):
         super().__init__(message)
