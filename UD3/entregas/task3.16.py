@@ -54,4 +54,4 @@ productsList.append(orange)
 
 order1 = Order("29-11-2024", productsList, client1)
 
-print(order1)   
+print(order1)
