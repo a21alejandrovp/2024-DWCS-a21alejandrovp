@@ -15,6 +15,7 @@
            display: flex;
            justify-content: center;
            align-items: center;
+           background-color: darkblue;
         }
         h4 {
             font-family: "Bungee Tint", serif;
@@ -25,20 +26,24 @@
 <body>
     {% load static %}
     <div class="d-flex flex-column justify-content-center align-items-center">
-        <div class="card m-3" style="width:450px">
+        <div class="card m-3" style="width:400px">
             <img class="card-img-top" src="{% static 'blog/'|add:post.imageName %}" alt="Deck Image">
-            <div class="card-body">
+            <div class="card-body" style="background-color: black;">
                 <h4 class="card-title d-flex justify-content-center align-items-center m-auto">{{ post.title }}</h4>
-                <p class="card-text d-flex justify-content-center align-items-center">{{ post.date|date:'d M Y' }}</p>
-                <p class="card-text d-flex justify-content-center align-items-center m-auto"><b>{{ post.excerptText }}</b></p>
+                <p class="card-text d-flex justify-content-center align-items-center" style="color: white">{{ post.date|date:'d M Y' }}</p>
+                <p class="card-text d-flex justify-content-center align-items-center m-auto" style="color: white"><b>{{ post.excerptText }}</b></p>
                 <p class="card-text d-flex justify-content-center align-items-center" style="color: grey"><i>{{ post.imageName }}</i></p>
             </div>
         </div>
-        <div class="card m-3" style="width:450px">
-            <div class="card-body">
-                <p class="card-text d-flex justify-content-center align-items-center m-auto">{{ post.author.first_name }} {{ post.author.last_name }}</p>
+        <div class="card m-3" style="width:400px">
+            <div class="card-body" style="background-color: black;">
+                <p class="card-text d-flex justify-content-center align-items-center m-auto" style="color: white">{{ post.author.first_name }} {{ post.author.last_name }}</p>
                 <a href="mailto:{{ post.author.email }}" class="card-text d-flex justify-content-center align-items-center text-decoration-none m-auto" style="color: red">{{ post.author.email }}</a>
-                <!-- <p class="card-text d-flex justify-content-center align-items-center m-auto">{{ post.tags.caption }}</p> -->
+                <p class="card-text d-flex justify-content-center align-items-center m-auto" style="color: palevioletred">
+                    {% for tag in post.tags.all %}
+                        #{{ tag.caption }} 
+                    {% endfor %}
+                </p>
             </div>
         </div>
     </div>

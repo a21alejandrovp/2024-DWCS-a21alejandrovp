@@ -6,6 +6,10 @@ def index(request):
     posts = Post.objects.order_by('date')[:3]
     return render (request, "blog/index.html", {'posts':posts})
 
+def all_blogs(request):
+    posts = Post.objects.all()
+    return render (request, "blog/index.html", {'posts':posts})
+
 def detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     return render(request, 'blog/detail.html', {'post':post})

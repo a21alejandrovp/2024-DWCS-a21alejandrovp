@@ -45,13 +45,9 @@
     </style>
   </head>
   <body>
-    {% load static %}
     <div id="title">
       <div class="m-4">
-        <img src="{% static 'blog/pokemon.png' %}" alt="Post Image">
-      </div>
-      <div class="m-4">
-        <h1>THIS IS A PAGE DEDICATED TO THE PUBLICATION OF POKÉMON DECKS.</h1>  
+        <h1>ALL DECKS</h1>  
       </div>
     </div>
     <div id="decks">
@@ -67,13 +63,6 @@
           </div>
         </div>
       {% endfor %}
-    </div>
-    <div>
-      <div id="#title">
-        <div class="ml-4 mr-4 mb-4">
-          <a href="{% url 'all_blogs' %}" class="text-decoration-none" id="letrabonita">SHOW ALL BLOGS</a>
-        </div>
-      </div>
     </div>
   </body>
 </html>
