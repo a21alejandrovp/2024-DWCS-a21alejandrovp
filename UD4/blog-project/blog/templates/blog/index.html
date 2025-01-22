@@ -43,8 +43,8 @@
   <body>
     {% load static %}
     <div id="title">
-      <div class="m{r|b|l}-4">
-        <img src="{% static 'blog/pokeball.jpg' %}" alt="Post Image">
+      <div class="m-4">
+        <img src="{% static 'blog/pokemon.png' %}" alt="Post Image">
       </div>
       <div class="m-4">
         <h1>THIS IS A PAGE DEDICATED TO THE PUBLICATION OF POKÉMON DECKS.</h1>  
@@ -52,7 +52,7 @@
     </div>
     <div id="decks">
       {% for post in posts %}
-        <div class="card m-3" style="width:300px">
+        <div class="card m-4" style="width:300px">
           <img class="card-img-top" src="{% static 'blog/'|add:post.imageName %}" alt="Deck Image">
           <div class="card-body">
             <h4 class="card-title m-auto">{{ post.title }}</h4>
