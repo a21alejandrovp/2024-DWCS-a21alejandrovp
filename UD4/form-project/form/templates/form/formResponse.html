@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Response</title>
+</head>
+<body>
+    <h1>Form data:</h1>
+    <p>Username: {{ results.username }}</p>
+    <p>Password: {{ results.password }}</p>
+    <p>City of employment: {{ results.cityOfEmployment }}</p>
+    <p>Web Server: {{ results.select }}</p>
+    <p>Role: {{ results.radio }}</p>
+    <p>Sign-on: {% for option in results.check %}{{ option }} {% endfor %}</p>
+</body>
+</html>
